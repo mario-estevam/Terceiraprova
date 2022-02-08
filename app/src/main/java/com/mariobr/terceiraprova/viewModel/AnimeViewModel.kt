@@ -1,16 +1,24 @@
 package com.mariobr.terceiraprova.viewModel
 
 
+import android.app.Application
+
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.room.Room
+import com.mariobr.terceiraprova.database.AppDatabase
 import com.mariobr.terceiraprova.model.Anime
+import com.mariobr.terceiraprova.model.AnimeLocal
 import com.mariobr.terceiraprova.repository.AnimeRepository
 import com.mariobr.terceiraprova.repository.Resultado
 
 
-class AnimeViewModel(private val repository: AnimeRepository) : ViewModel() {
+class AnimeViewModel(private val repository: AnimeRepository) : ViewModel()  {
 
-    var lista : Array<Anime?> =  arrayOfNulls<Anime>(10)
+
+
+    var lista : Array<Anime> =  arrayOf<Anime>()
 
     fun buscarTodosOsAnimes(id:Long): LiveData<Resultado<Anime?>> =
         repository.buscaAnime(id)
@@ -18,6 +26,9 @@ class AnimeViewModel(private val repository: AnimeRepository) : ViewModel() {
      fun listarTodos(): LiveData<Any?> {
         return repository.buscaAnimes()
     }
+
+
+
 
 
 

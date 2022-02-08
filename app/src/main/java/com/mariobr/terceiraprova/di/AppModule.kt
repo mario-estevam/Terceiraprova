@@ -7,6 +7,7 @@ import com.mariobr.terceiraprova.service.AnimeService
 import com.mariobr.terceiraprova.viewModel.AnimeViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
