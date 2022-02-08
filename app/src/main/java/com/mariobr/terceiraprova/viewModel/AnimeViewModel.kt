@@ -18,4 +18,7 @@ class AnimeViewModel(private val repository: AnimeRepository) : ViewModel() {
      fun listarTodos(): LiveData<Any?> {
         return repository.buscaAnimes()
     }
+
+
+
 }

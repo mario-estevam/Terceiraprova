@@ -35,6 +35,10 @@ class NovoAnimeAdapter : RecyclerView.Adapter<NovoAnimeViewHolder>() {
         return animes.size
     }
 
+    fun setAnimeList(animes2: Array<Anime>) {
+        animes = animes2
+        notifyDataSetChanged()
+    }
 }
 
 class NovoAnimeViewHolder(v: View) : RecyclerView.ViewHolder(v) {
