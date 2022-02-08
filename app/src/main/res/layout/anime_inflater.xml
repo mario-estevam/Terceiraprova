@@ -33,7 +33,7 @@
         android:text="eps" />
 
     <TextView
-        android:id="@+id/eps"
+        android:id="@+id/AnimeEps"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
@@ -50,7 +50,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/ano"
+        android:id="@+id/AnimeAno"
         android:layout_marginLeft="15dp"
         android:layout_weight="3"
         />

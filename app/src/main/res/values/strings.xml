@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Terceiraprova</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="arcos">arcos</string>
+    <string name="nome">nome</string>
+    <string name="nota">nota</string>
+    <string name="episodios">episodios</string>
+    <string name="home">Home</string>
+    <string name="idiomas">idiomas</string>
+    <string name="ano">ano</string>
+    <string name="desenvolvido_por">Desenvolvido por:</string>
+    <string name="curso">Curso:</string>
+    <string name="programa_o_para_dispositivos_m_veis">Programação para dispositivos Móveis</string>
+    <string name="an_lise_e_desenvolvimento_de_sistemas">Análise e desenvolvimento de sistemas</string>
+    <string name="mario_estevam">Mario Estevam</string>
+    <string name="mat_ria">Matéria:</string>
+    <string name="anime">Anime</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="classificacao">classificacao</string>
+    <string name="cadastro">Cadastro</string>
 </resources>

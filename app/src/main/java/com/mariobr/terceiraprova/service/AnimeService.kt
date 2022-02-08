@@ -15,4 +15,6 @@ interface AnimeService {
     @GET("/animes")
     suspend fun buscarAnimes(): Response<Array<Anime>>
 
+
+
 }

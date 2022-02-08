@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/fragmentHomeOne">
+
+    <fragment
+        android:id="@+id/fragmentTwoHome"
+        android:name="com.mariobr.terceiraprova.ui.FragmentTwoHome"
+        android:label="Home off network"
+        tools:layout="@layout/fragment_two_home" >
+        <action
+            android:id="@+id/action_fragmentTwoHome_to_fragmentDetalhes"
+            app:destination="@id/fragmentDetalhes" />
+        <action
+            android:id="@+id/action_fragmentTwoHome_to_fragmentAltera"
+            app:destination="@id/fragmentAltera" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHomeOne"
+        android:name="com.mariobr.terceiraprova.ui.FragmentHomeOne"
+        android:label="FragmentHomeOne" >
+        <action
+            android:id="@+id/action_fragmentHomeOne_to_fragmentTwoHome"
+            app:destination="@id/fragmentTwoHome" />
+        <action
+            android:id="@+id/action_fragmentHomeOne_to_fragmentCadastro"
+            app:destination="@id/fragmentCadastro" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCadastro"
+        android:name="com.mariobr.terceiraprova.ui.FragmentCadastro"
+        android:label="Cadastro local"
+        tools:layout="@layout/fragment_cadastro" />
+    <fragment
+        android:id="@+id/fragmentDetalhes"
+        android:name="com.mariobr.terceiraprova.ui.FragmentDetalhes"
+        android:label="Detalhes"
+        tools:layout="@layout/fragment_detalhes">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAltera"
+        android:name="com.mariobr.terceiraprova.ui.FragmentAltera"
+        android:label="Alterar dados"
+        tools:layout="@layout/fragment_altera">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>

@@ -24,6 +24,9 @@ interface AnimeDAO {
     @Query("SELECT * FROM tb_anime")
     fun listAll(): LiveData<List<AnimeLocal>>
 
+    @Query("SELECT * FROM tb_anime")
+    fun buscarAnimes(): Array<AnimeLocal>
+
     @Query("SELECT * from tb_anime where id=:id")
     fun findById(id: Int): AnimeLocal
 

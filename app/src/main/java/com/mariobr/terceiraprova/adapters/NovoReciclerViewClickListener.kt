@@ -1,4 +1,4 @@
-package com.mariobr.segundaprova.adapters
+package com.mariobr.terceiraprova.adapters
 
 import android.content.Context
 import android.util.Log

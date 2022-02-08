@@ -1,6 +1,7 @@
 package com.mariobr.terceiraprova.repository
 
 import androidx.lifecycle.liveData
+import com.mariobr.terceiraprova.database.AnimeDAO
 
 import com.mariobr.terceiraprova.model.Anime
 import com.mariobr.terceiraprova.service.AnimeService
@@ -36,6 +37,7 @@ class AnimeRepository (private val service: AnimeService) {
     }
 
     fun buscaAnimes() = liveData {
+
         try {
             val resposta = service.buscarAnimes()
             if(resposta.isSuccessful){
