@@ -4,5 +4,6 @@
 
     <item android:title="Home local" android:id="@+id/fragmentTwoHome" />
     <item android:title="Cadastro local" android:id="@+id/fragmentCadastro" />
+    <item android:title="Sobre" android:id="@+id/fragmentSobre" />
 
 </menu>

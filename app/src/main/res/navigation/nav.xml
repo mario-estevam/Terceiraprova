@@ -20,13 +20,16 @@
     <fragment
         android:id="@+id/fragmentHomeOne"
         android:name="com.mariobr.terceiraprova.ui.FragmentHomeOne"
-        android:label="FragmentHomeOne" >
+        android:label="Home Web">
         <action
             android:id="@+id/action_fragmentHomeOne_to_fragmentTwoHome"
             app:destination="@id/fragmentTwoHome" />
         <action
             android:id="@+id/action_fragmentHomeOne_to_fragmentCadastro"
             app:destination="@id/fragmentCadastro" />
+        <action
+            android:id="@+id/action_fragmentHomeOne_to_fragmentSobre"
+            app:destination="@id/fragmentSobre" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCadastro"
@@ -51,4 +54,9 @@
             android:name="id"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentSobre"
+        android:name="com.mariobr.terceiraprova.ui.FragmentSobre"
+        android:label="Sobre"
+        tools:layout="@layout/fragment_sobre" />
 </navigation>
