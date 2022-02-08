@@ -2,6 +2,7 @@ package com.mariobr.terceiraprova
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val adapter  = NovoAnimeAdapter()
 
         binding.recyclerview.adapter = adapter
-
+        Log.e("commit","commit now")
 
         Thread{
             while(true){
