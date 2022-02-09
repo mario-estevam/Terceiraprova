@@ -12,11 +12,11 @@ import com.mariobr.terceiraprova.model.Anime
 
 class NovoAnimeAdapter: RecyclerView.Adapter<NovoAnimeAdapter.AnimeViewHolder>() {
 
-   var animes: Array<Anime> = arrayOf<Anime>()
+    var animes: Array<Anime> = arrayOf<Anime>()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.anime_inflater, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.anime_inflater2, parent, false)
         return AnimeViewHolder(view)
     }
 

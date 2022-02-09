@@ -1,4 +1,4 @@
-package com.mariobr.terceiraprova.ui
+package com.mariobr.terceiraprova.fragments
 
 
 
@@ -11,7 +11,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.mariobr.terceiraprova.R
 import com.mariobr.terceiraprova.adapters.NovoAnimeAdapter
-import com.mariobr.terceiraprova.adapters.NovoRecyclerViewClickListener
+import com.mariobr.terceiraprova.adapters.NovoReciclerViewClickListener
+
 import com.mariobr.terceiraprova.databinding.FragmentHomeOneBinding
 import com.mariobr.terceiraprova.model.Anime
 import com.mariobr.terceiraprova.model.AnimeLocal
@@ -56,15 +57,6 @@ class FragmentHomeOne : Fragment() {
             }
         }.start()
 
-
-        binding.recyclerView.addOnItemTouchListener(NovoRecyclerViewClickListener(requireContext(),binding.recyclerView, object : NovoRecyclerViewClickListener.onItemClickListener{
-            override fun onItemClick(v: View, position: Int) {
-
-            }
-            override fun onItemLongClick(v: View, position: Int) {
-
-            }
-        }))
 
        return binding.root
     }

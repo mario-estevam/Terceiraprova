@@ -2,38 +2,55 @@ package com.mariobr.terceiraprova.adapters
 
 
 import android.view.LayoutInflater
-import android.view.View
+
 import android.view.ViewGroup
-import android.widget.TextView
+
+
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mariobr.terceiraprova.R
+import com.mariobr.terceiraprova.databinding.AnimeInflaterBinding
 import com.mariobr.terceiraprova.model.AnimeLocal
 
 
-class AnimeAdapterLocal: RecyclerView.Adapter<AnimeAdapterLocal.AnimeViewHolderr>() {
-
-    var animes: Array<AnimeLocal> = arrayOf<AnimeLocal>()
+class AnimeAdapterLocal: ListAdapter<AnimeLocal, AnimeAdapterLocal.AnimeViewHolderr>(AnimeDiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolderr {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.anime_inflater, parent, false)
-        return AnimeViewHolderr(view)
+        return AnimeViewHolderr.from(parent) // escolhe view holder
     }
 
     override fun onBindViewHolder(holder: AnimeViewHolderr, position: Int) {
-        val anime = animes[position]
-        holder.nomeTextView.text = anime.nome
-        holder.epsTextView.text = anime.eps.toString()
-        holder.anoTextView.text = anime.ano.toString()
+        val anime = currentList[position]
+        holder.bind(anime) //invoca metodo de binding
+
     }
 
-    override fun getItemCount(): Int {
-        return animes.size
+    class AnimeViewHolderr private constructor(var binding: AnimeInflaterBinding) : RecyclerView.ViewHolder(binding.root){
+
+        fun bind(anime:AnimeLocal){
+            binding.anime = anime //fazendo de fato binding
+        }
+
+        companion object{  //instanciação
+            fun from(parent:ViewGroup):AnimeViewHolderr{
+                val inflater = LayoutInflater.from(parent.context)
+                val binding:AnimeInflaterBinding = DataBindingUtil.inflate(inflater, R.layout.anime_inflater, parent,false)
+                return AnimeViewHolderr(binding)
+            }
+        }
+
     }
 
-    class AnimeViewHolderr(itemView: View) : RecyclerView.ViewHolder(itemView){
-        var nomeTextView = itemView.findViewById<TextView>(R.id.nomeAnime)
-        var epsTextView = itemView.findViewById<TextView>(R.id.AnimeEps)
-        var anoTextView = itemView.findViewById<TextView>(R.id.AnimeAno)
+    class AnimeDiffCallBack:DiffUtil.ItemCallback<AnimeLocal>(){
+        override fun areItemsTheSame(oldItem: AnimeLocal, newItem: AnimeLocal): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: AnimeLocal, newItem: AnimeLocal): Boolean {
+            return oldItem == newItem
+        }
     }
 
 }

@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/fragmentHomeOne">
+    app:startDestination="@id/fragmentTwoHome">
 
     <fragment
         android:id="@+id/fragmentTwoHome"
-        android:name="com.mariobr.terceiraprova.ui.FragmentTwoHome"
+        android:name="com.mariobr.terceiraprova.fragments.FragmentTwoHome"
         android:label="Home off network"
         tools:layout="@layout/fragment_two_home" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentHomeOne"
-        android:name="com.mariobr.terceiraprova.ui.FragmentHomeOne"
+        android:name="com.mariobr.terceiraprova.fragments.FragmentHomeOne"
         android:label="Home Web">
         <action
             android:id="@+id/action_fragmentHomeOne_to_fragmentTwoHome"
@@ -33,12 +33,12 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentCadastro"
-        android:name="com.mariobr.terceiraprova.ui.FragmentCadastro"
+        android:name="com.mariobr.terceiraprova.fragments.FragmentCadastro"
         android:label="Cadastro local"
         tools:layout="@layout/fragment_cadastro" />
     <fragment
         android:id="@+id/fragmentDetalhes"
-        android:name="com.mariobr.terceiraprova.ui.FragmentDetalhes"
+        android:name="com.mariobr.terceiraprova.fragments.FragmentDetalhes"
         android:label="Detalhes"
         tools:layout="@layout/fragment_detalhes">
         <argument
@@ -47,16 +47,19 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentAltera"
-        android:name="com.mariobr.terceiraprova.ui.FragmentAltera"
+        android:name="com.mariobr.terceiraprova.fragments.FragmentAltera"
         android:label="Alterar dados"
         tools:layout="@layout/fragment_altera">
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_fragmentAltera_to_fragmentHomeOne"
+            app:destination="@id/fragmentHomeOne" />
     </fragment>
     <fragment
         android:id="@+id/fragmentSobre"
-        android:name="com.mariobr.terceiraprova.ui.FragmentSobre"
+        android:name="com.mariobr.terceiraprova.fragments.FragmentSobre"
         android:label="Sobre"
         tools:layout="@layout/fragment_sobre" />
 </navigation>

@@ -1,16 +1,15 @@
-package com.mariobr.terceiraprova.ui
+package com.mariobr.terceiraprova.fragments
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.mariobr.terceiraprova.R
 import com.mariobr.terceiraprova.databinding.FragmentCadastroBinding
+import com.mariobr.terceiraprova.dialogs.CustomDialogFragment
 import com.mariobr.terceiraprova.viewModel.CadastroViewModel
 
 
@@ -36,6 +35,21 @@ class FragmentCadastro : Fragment() {
 
         setHasOptionsMenu(true)
         return bindingCadastro.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.ajuda -> {
+                val dialog = CustomDialogFragment()
+                dialog.show(requireActivity().supportFragmentManager,"Dialog3")
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

@@ -18,5 +18,12 @@
     <string name="anime">Anime</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="classificacao">classificacao</string>
-    <string name="cadastro">Cadastro</string>
+    <string name="cadastro">Cadastro</string>  <string name="alterar">Alterar</string>
+    <string name="testar">Tela de cadastro</string>
+    <string name="tela_home">Tela Inicial</string>
+    <string name="tela_detalhes">Tela de Detalhes</string>
+    <string name="tela_sobre">Sobre</string>
+    <string name="tela_alterar">Tela de alterar</string>
+    <string name="sobre">Sobre</string>
+
 </resources>

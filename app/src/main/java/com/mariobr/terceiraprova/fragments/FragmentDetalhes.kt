@@ -1,15 +1,14 @@
-package com.mariobr.terceiraprova.ui
+package com.mariobr.terceiraprova.fragments
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.mariobr.terceiraprova.R
 import com.mariobr.terceiraprova.databinding.FragmentDetalhesBinding
+import com.mariobr.terceiraprova.dialogs.DialogDetalhes
 import com.mariobr.terceiraprova.viewModel.DetalhesViewModel
 
 
@@ -33,6 +32,20 @@ class FragmentDetalhes : Fragment() {
         setHasOptionsMenu(true)
         return bindingD.root
 
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.ajuda -> {
+                val dialog = DialogDetalhes()
+                dialog.show(requireActivity().supportFragmentManager,"Dialog3")
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 
