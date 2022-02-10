@@ -1,4 +1,4 @@
-package com.mariobr.terceiraprova.fragments
+package com.mariobr.terceiraprova.ui.detalhes
 
 import android.os.Bundle
 import android.view.*
@@ -7,30 +7,35 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.mariobr.terceiraprova.R
+import com.mariobr.terceiraprova.TerceiraProvaApplication
 import com.mariobr.terceiraprova.databinding.FragmentDetalhesBinding
 import com.mariobr.terceiraprova.dialogs.DialogDetalhes
-import com.mariobr.terceiraprova.viewModel.DetalhesViewModel
 
 
 class FragmentDetalhes : Fragment() {
 
-    lateinit var bindingD:FragmentDetalhesBinding
-    lateinit var viewModelD: DetalhesViewModel
+    lateinit var binding:FragmentDetalhesBinding
+    lateinit var viewModel: DetalhesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val args:FragmentDetalhesArgs by navArgs()
-        bindingD= DataBindingUtil.inflate(inflater, R.layout.fragment_detalhes, container, false)
-        val viewModelFactory = DetalhesViewModel.DetalhesFragmentViewModelFactory(requireActivity().application, args.id)
-        viewModelD = ViewModelProvider(this, viewModelFactory).get(DetalhesViewModel::class.java)
+        val args: FragmentDetalhesArgs by navArgs()
 
-        bindingD.viewModelD = viewModelD
-        bindingD.lifecycleOwner = this
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detalhes, container, false)
+        val viewModelFactory = DetalhesViewModel.Factory(
+            args.id.toLong(),
+            (requireActivity().application as TerceiraProvaApplication).localRepository
+        )
+        viewModel = ViewModelProvider(this, viewModelFactory ).get(DetalhesViewModel::class.java)
+
+        binding.viewModelD = viewModel
+
+        binding.lifecycleOwner = this
 
         setHasOptionsMenu(true)
-        return bindingD.root
+        return binding.root
 
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

@@ -1,4 +1,4 @@
-package com.mariobr.terceiraprova.adapters
+package com.mariobr.terceiraprova.ui.home.adapter
 
 
 import android.view.LayoutInflater
@@ -12,10 +12,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mariobr.terceiraprova.R
 import com.mariobr.terceiraprova.databinding.AnimeInflaterBinding
+
 import com.mariobr.terceiraprova.model.AnimeLocal
 
 
-class AnimeAdapterLocal: ListAdapter<AnimeLocal, AnimeAdapterLocal.AnimeViewHolderr>(AnimeDiffCallBack()) {
+class AnimeAdapterLocal: ListAdapter<AnimeLocal, AnimeAdapterLocal.AnimeViewHolderr>(
+    AnimeDiffCallBack()
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolderr {
         return AnimeViewHolderr.from(parent) // escolhe view holder
@@ -34,7 +37,7 @@ class AnimeAdapterLocal: ListAdapter<AnimeLocal, AnimeAdapterLocal.AnimeViewHold
         }
 
         companion object{  //instanciação
-            fun from(parent:ViewGroup):AnimeViewHolderr{
+            fun from(parent:ViewGroup): AnimeViewHolderr {
                 val inflater = LayoutInflater.from(parent.context)
                 val binding:AnimeInflaterBinding = DataBindingUtil.inflate(inflater, R.layout.anime_inflater, parent,false)
                 return AnimeViewHolderr(binding)

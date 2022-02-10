@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.mariobr.terceiraprova.viewModel.CadastroViewModel" />
+            type="com.mariobr.terceiraprova.ui.cadastro.CadastroViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -184,6 +184,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cadastrar"
+            android:onClick="@{() -> viewModel.cadastroAnime()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,6 +1,7 @@
 package com.mariobr.terceiraprova.model
 
 data class Anime(
+    var id:Long,
     var nome:String,
     var arcos:String,
     var eps:Int,

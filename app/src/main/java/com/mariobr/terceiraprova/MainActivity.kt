@@ -8,11 +8,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 
 import com.mariobr.terceiraprova.databinding.ActivityMainBinding
-import com.mariobr.terceiraprova.model.Anime
-import com.mariobr.terceiraprova.model.AnimeLocal
-import com.mariobr.terceiraprova.viewModel.AnimeViewModel
-import org.koin.android.viewmodel.ext.android.viewModel
-
 
 
 class MainActivity : AppCompatActivity() {

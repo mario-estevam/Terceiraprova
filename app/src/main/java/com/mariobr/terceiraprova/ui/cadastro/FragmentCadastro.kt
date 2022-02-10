@@ -1,4 +1,4 @@
-package com.mariobr.terceiraprova.fragments
+package com.mariobr.terceiraprova.ui.cadastro
 
 import android.os.Bundle
 import android.view.*
@@ -8,14 +8,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.mariobr.terceiraprova.R
+import com.mariobr.terceiraprova.TerceiraProvaApplication
 import com.mariobr.terceiraprova.databinding.FragmentCadastroBinding
 import com.mariobr.terceiraprova.dialogs.CustomDialogFragment
-import com.mariobr.terceiraprova.viewModel.CadastroViewModel
 
 
 class FragmentCadastro : Fragment() {
 
-    lateinit var bindingCadastro:FragmentCadastroBinding
+    lateinit var binding:FragmentCadastroBinding
     lateinit var viewModel: CadastroViewModel
 
     override fun onCreateView(
@@ -23,18 +23,23 @@ class FragmentCadastro : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        bindingCadastro= DataBindingUtil.inflate(inflater, R.layout.fragment_cadastro, container, false)
-        viewModel = ViewModelProvider(this).get(CadastroViewModel::class.java)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cadastro, container, false)
+        val viewModelFactory = CadastroViewModel.Factory((requireActivity().application as TerceiraProvaApplication).localRepository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(CadastroViewModel::class.java)
+        binding.viewModel = viewModel
 
-        bindingCadastro.viewModel = viewModel
-        bindingCadastro.cadastrar.setOnClickListener {
-            viewModel.cadastraAnime()
-            Navigation.findNavController(it).navigate(R.id.fragmentHomeOne)
-            Toast.makeText(context, "Cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
-        }
+        binding.lifecycleOwner = this
 
         setHasOptionsMenu(true)
-        return bindingCadastro.root
+
+        viewModel.eventCadastroAnime.observe(viewLifecycleOwner, { hasChanged ->
+            if (hasChanged){
+                Navigation.findNavController(requireView()).navigate(R.id.fragmentTwoHome)
+                viewModel.onCadastroAnimeComplete()
+            }
+        })
+
+        return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

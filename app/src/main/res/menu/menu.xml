@@ -2,7 +2,7 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home local" android:id="@+id/fragmentTwoHome" />
+    <item android:title="Home web" android:id="@+id/fragmentHomeOne" />
     <item android:title="Cadastro local" android:id="@+id/fragmentCadastro" />
     <item android:title="Sobre" android:id="@+id/fragmentSobre" />
 

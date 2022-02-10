@@ -1,4 +1,4 @@
-package com.mariobr.terceiraprova.adapters
+package com.mariobr.terceiraprova.util
 
 
 import android.view.GestureDetector
@@ -6,7 +6,7 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class NovoReciclerViewClickListener(val view: RecyclerView, val listener:OnItemClickListener) : RecyclerView.OnItemTouchListener  {
+class ReciclerViewClickListener(val view: RecyclerView, val listener:OnItemClickListener) : RecyclerView.OnItemTouchListener  {
 
     var myGestureDetector: GestureDetector = GestureDetector(view.context, object : GestureDetector.SimpleOnGestureListener() {
         override fun onSingleTapUp(motionEvent: MotionEvent): Boolean {

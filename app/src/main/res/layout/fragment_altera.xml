@@ -6,7 +6,7 @@
     <data>
         <variable
             name="alteraViewModel"
-            type="com.mariobr.terceiraprova.viewModel.AlteraViewModel" />
+            type="com.mariobr.terceiraprova.ui.altera.AlteraViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -181,7 +181,7 @@
             android:id="@+id/alterar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> alteraViewModel.onAlteraAnimeStart()}"
+            android:onClick="@{() -> alteraViewModel.alteraAnime()}"
             android:text="Alterar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

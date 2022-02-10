@@ -2,12 +2,11 @@ package com.mariobr.terceiraprova.di
 
 
 
-import com.mariobr.terceiraprova.repository.AnimeRepository
+import com.mariobr.terceiraprova.database.repository.AnimeRepository
 import com.mariobr.terceiraprova.service.AnimeService
-import com.mariobr.terceiraprova.viewModel.AnimeViewModel
+import com.mariobr.terceiraprova.ui.homeWeb.AnimeViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit

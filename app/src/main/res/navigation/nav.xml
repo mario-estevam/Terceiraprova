@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentTwoHome"
-        android:name="com.mariobr.terceiraprova.fragments.FragmentTwoHome"
+        android:name="com.mariobr.terceiraprova.ui.home.FragmentTwoHome"
         android:label="Home off network"
         tools:layout="@layout/fragment_two_home" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentHomeOne"
-        android:name="com.mariobr.terceiraprova.fragments.FragmentHomeOne"
+        android:name="com.mariobr.terceiraprova.ui.homeWeb.FragmentHomeOne"
         android:label="Home Web">
         <action
             android:id="@+id/action_fragmentHomeOne_to_fragmentTwoHome"
@@ -33,12 +33,12 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentCadastro"
-        android:name="com.mariobr.terceiraprova.fragments.FragmentCadastro"
+        android:name="com.mariobr.terceiraprova.ui.cadastro.FragmentCadastro"
         android:label="Cadastro local"
         tools:layout="@layout/fragment_cadastro" />
     <fragment
         android:id="@+id/fragmentDetalhes"
-        android:name="com.mariobr.terceiraprova.fragments.FragmentDetalhes"
+        android:name="com.mariobr.terceiraprova.ui.detalhes.FragmentDetalhes"
         android:label="Detalhes"
         tools:layout="@layout/fragment_detalhes">
         <argument
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentAltera"
-        android:name="com.mariobr.terceiraprova.fragments.FragmentAltera"
+        android:name="com.mariobr.terceiraprova.ui.altera.FragmentAltera"
         android:label="Alterar dados"
         tools:layout="@layout/fragment_altera">
         <argument
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentSobre"
-        android:name="com.mariobr.terceiraprova.fragments.FragmentSobre"
+        android:name="com.mariobr.terceiraprova.ui.sobre.FragmentSobre"
         android:label="Sobre"
         tools:layout="@layout/fragment_sobre" />
 </navigation>

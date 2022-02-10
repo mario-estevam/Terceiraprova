@@ -1,4 +1,4 @@
-package com.mariobr.terceiraprova.fragments
+package com.mariobr.terceiraprova.ui.sobre
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

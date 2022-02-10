@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.mariobr.terceiraprova.database.dao.AnimeDAO
 import com.mariobr.terceiraprova.model.AnimeLocal
 
 @Database(entities = [AnimeLocal::class], version = 1)
@@ -11,24 +12,17 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun animeDao(): AnimeDAO
 
     companion object {
-        @Volatile
-        private var INSTANCE: AppDatabase? = null
+        @Volatile private var instance: AppDatabase? = null
+        private val LOCK = Any()
 
-        fun getDatabase(context: Context): AppDatabase {
-            val tempInstance = INSTANCE
-            if (tempInstance != null)
-                return tempInstance
-            synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "anime_database"
-                ).allowMainThreadQueries().fallbackToDestructiveMigration().build()
-                INSTANCE = instance
-                return instance
-            }
+        operator fun invoke(context: Context)= instance ?: synchronized(LOCK){
+            instance ?: buildDatabase(context).also { instance = it}
         }
-    }
 
+        private fun buildDatabase(context: Context) = Room.databaseBuilder(context,
+            AppDatabase::class.java, "anime_database")
+            .fallbackToDestructiveMigration()
+            .build()
+    }
 
 }

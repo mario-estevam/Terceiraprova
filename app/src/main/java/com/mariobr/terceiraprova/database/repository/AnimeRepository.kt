@@ -1,7 +1,6 @@
-package com.mariobr.terceiraprova.repository
+package com.mariobr.terceiraprova.database.repository
 
 import androidx.lifecycle.liveData
-import com.mariobr.terceiraprova.database.AnimeDAO
 
 import com.mariobr.terceiraprova.model.Anime
 import com.mariobr.terceiraprova.service.AnimeService
