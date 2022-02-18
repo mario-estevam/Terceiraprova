@@ -3,7 +3,7 @@ package com.mariobr.terceiraprova.database.repository
 import androidx.lifecycle.liveData
 
 import com.mariobr.terceiraprova.model.Anime
-import com.mariobr.terceiraprova.service.AnimeService
+import com.mariobr.terceiraprova.database.service.AnimeService
 import java.net.ConnectException
 
 

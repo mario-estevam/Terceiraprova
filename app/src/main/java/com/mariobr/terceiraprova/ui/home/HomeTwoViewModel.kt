@@ -11,6 +11,8 @@ class HomeTwoViewModel private constructor(localRepository: LocalRepository) : V
 
     var list: LiveData<List<AnimeLocal>> = localRepository.listAll.asLiveData()
 
+
+    //precisa-se da fabrica pra obter o repositorio
     class Factory(val localRepository: LocalRepository) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(HomeTwoViewModel::class.java)) {

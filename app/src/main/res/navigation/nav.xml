@@ -35,7 +35,11 @@
         android:id="@+id/fragmentCadastro"
         android:name="com.mariobr.terceiraprova.ui.cadastro.FragmentCadastro"
         android:label="Cadastro local"
-        tools:layout="@layout/fragment_cadastro" />
+        tools:layout="@layout/fragment_cadastro" >
+        <action
+            android:id="@+id/action_fragmentCadastro_to_fragmentTwoHome"
+            app:destination="@id/fragmentTwoHome" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentDetalhes"
         android:name="com.mariobr.terceiraprova.ui.detalhes.FragmentDetalhes"

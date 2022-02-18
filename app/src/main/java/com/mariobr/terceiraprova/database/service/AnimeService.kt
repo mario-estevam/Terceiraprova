@@ -1,6 +1,5 @@
-package com.mariobr.terceiraprova.service
+package com.mariobr.terceiraprova.database.service
 
-import androidx.lifecycle.MutableLiveData
 import com.mariobr.terceiraprova.model.Anime
 
 import retrofit2.Response
@@ -15,7 +14,6 @@ interface AnimeService {
 
     @GET("/animes")
     suspend fun buscarAnimes(): Response<MutableList<Anime>>
-
 
 
 }

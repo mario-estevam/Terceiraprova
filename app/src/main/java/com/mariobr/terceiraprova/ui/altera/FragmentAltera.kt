@@ -10,7 +10,7 @@ import androidx.navigation.fragment.navArgs
 import com.mariobr.terceiraprova.R
 import com.mariobr.terceiraprova.TerceiraProvaApplication
 import com.mariobr.terceiraprova.databinding.FragmentAlteraBinding
-import com.mariobr.terceiraprova.dialogs.DialogAlterar
+import com.mariobr.terceiraprova.util.dialogs.DialogAlterar
 
 
 class FragmentAltera : Fragment() {

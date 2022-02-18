@@ -1,9 +1,9 @@
-package com.mariobr.terceiraprova.di
+package com.mariobr.terceiraprova.web
 
 
 
 import com.mariobr.terceiraprova.database.repository.AnimeRepository
-import com.mariobr.terceiraprova.service.AnimeService
+import com.mariobr.terceiraprova.database.service.AnimeService
 import com.mariobr.terceiraprova.ui.homeWeb.AnimeViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,7 +11,6 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
 
 private const val URL_BASE = "https://aw-animes-api.herokuapp.com/"
 

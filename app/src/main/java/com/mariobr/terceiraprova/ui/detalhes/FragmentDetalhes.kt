@@ -9,7 +9,7 @@ import androidx.navigation.fragment.navArgs
 import com.mariobr.terceiraprova.R
 import com.mariobr.terceiraprova.TerceiraProvaApplication
 import com.mariobr.terceiraprova.databinding.FragmentDetalhesBinding
-import com.mariobr.terceiraprova.dialogs.DialogDetalhes
+import com.mariobr.terceiraprova.util.dialogs.DialogDetalhes
 
 
 class FragmentDetalhes : Fragment() {

@@ -23,7 +23,7 @@ interface AnimeDAO {
     suspend fun atualizar(anime: AnimeLocal):Int
 
     @Query("SELECT * FROM tb_anime")
-    fun listAll(): Flow<List<AnimeLocal>>
+    fun listAll(): Flow<List<AnimeLocal>> //flow: fluxo de dados assincrono
 
     @Query("SELECT * FROM tb_anime")
     fun buscarAnimes(): Array<AnimeLocal>

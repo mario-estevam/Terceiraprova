@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.mariobr.terceiraprova.R
@@ -29,7 +29,6 @@ class FragmentHomeOne : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home_one, container, false)
         val adapter  = AnimeAdapterWeb()
@@ -38,25 +37,6 @@ class FragmentHomeOne : Fragment() {
         viewModel.listarTodos().observe(viewLifecycleOwner, { list ->
             adapter.submitList(list as MutableList<Anime>?)
         })
-
-//        Thread{
-//            while(true){
-//                Thread.sleep(3000)
-//                this.requireActivity().runOnUiThread{
-//                    try {
-//                        if ( view != null) {
-//                            viewModel.listarTodos().observe(viewLifecycleOwner, { list ->
-//                                adapter.submitList(list as MutableList<Anime>?)
-//                            })
-//                        }
-//                    }catch (e:ArrayIndexOutOfBoundsException ) {
-//                        Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show()
-//                    }
-//
-//                }
-//            }
-//        }.start()
-
 
        return binding.root
     }

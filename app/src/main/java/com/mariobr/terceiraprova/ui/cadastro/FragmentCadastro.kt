@@ -3,14 +3,13 @@ package com.mariobr.terceiraprova.ui.cadastro
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.mariobr.terceiraprova.R
 import com.mariobr.terceiraprova.TerceiraProvaApplication
 import com.mariobr.terceiraprova.databinding.FragmentCadastroBinding
-import com.mariobr.terceiraprova.dialogs.CustomDialogFragment
+import com.mariobr.terceiraprova.util.dialogs.CustomDialogFragment
 
 
 class FragmentCadastro : Fragment() {
@@ -31,10 +30,10 @@ class FragmentCadastro : Fragment() {
         binding.lifecycleOwner = this
 
         setHasOptionsMenu(true)
-
+        // a navegação nao pode ser feita no viewModel, mas podemos aqui observar o evento que ocorre pra realizar a navegação
         viewModel.eventCadastroAnime.observe(viewLifecycleOwner, { hasChanged ->
-            if (hasChanged){
-                Navigation.findNavController(requireView()).navigate(R.id.fragmentTwoHome)
+            if (hasChanged){ // se o evento está ocorrendo ele vai navegar pra home
+                Navigation.findNavController(requireView()).navigate(FragmentCadastroDirections.actionFragmentCadastroToFragmentTwoHome())
                 viewModel.onCadastroAnimeComplete()
             }
         })

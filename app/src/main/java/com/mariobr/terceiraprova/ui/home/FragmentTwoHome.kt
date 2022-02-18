@@ -13,7 +13,7 @@ import com.mariobr.terceiraprova.ui.home.adapter.AnimeAdapterLocal
 import com.mariobr.terceiraprova.util.ReciclerViewClickListener
 
 import com.mariobr.terceiraprova.databinding.FragmentTwoHomeBinding
-import com.mariobr.terceiraprova.dialogs.DialogHome
+import com.mariobr.terceiraprova.util.dialogs.DialogHome
 
 
 class FragmentTwoHome : Fragment() {

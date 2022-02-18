@@ -1,33 +1,30 @@
-package com.mariobr.terceiraprova.dialogs
+package com.mariobr.terceiraprova.util.dialogs
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
-
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 
 import com.mariobr.terceiraprova.R
 
-class CustomDialogFragment:DialogFragment() {
+class DialogAlterar: DialogFragment() {
 
+    @SuppressLint("InlinedApi")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             // Use the Builder class for convenient dialog construction
             val builder = AlertDialog.Builder(it, android.R.style.Theme_Material_Dialog_MinWidth)
             builder
                 .setIcon(android.R.drawable.ic_dialog_info)
-                .setTitle(getString(R.string.testar))
-                .setMessage("Esta é a tela de cadastro, você deve preencher os respectivos campos para que possa cadastrar um anime no sistema.")
+                .setTitle(getString(R.string.tela_alterar))
+                .setMessage("Esta é a tela de alterar, aqui voce pode alterar algum dado referente ao anime que você selecionou.")
                 .setPositiveButton("Confirmar",
                     DialogInterface.OnClickListener { dialog, id ->
-                        Toast.makeText(it.baseContext, "Agora preencha os dados!", Toast.LENGTH_SHORT).show()
                     })
             // Create the AlertDialog object and return it
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
-
-
 }
